@@ -2,7 +2,7 @@ import axios from 'axios';
 import { toast } from 'react-toastify';
 
 const api = axios.create({
-    baseURL: 'https://gestorproyectos-back-f37539863e8a.herokuapp.com/api',
+    baseURL: 'https://gestorproyectos-back.onrender.com/api',
 });
 
 api.interceptors.request.use(config => {
