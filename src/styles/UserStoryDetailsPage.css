@@ -1,0 +1,22 @@
+/* styles/UserStoryDetailsPage.css */
+.main-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  
+  .content {
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .paper {
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .header {
+    margin-bottom: 16px;
+  }
+  

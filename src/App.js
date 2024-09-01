@@ -1,24 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './pages/LoginPage';
+import Dashboard from './pages/DashboardPage'; 
+import Register from './pages/RegisterPage';
+import CompanyPage from './pages/CompanyPage';
+import GitHubLinksPage from './pages/Codepage';
+import ProjectDetailsPage from './pages/ProjectDetailsPage';
+import UserStoryDetailsPage from './pages/UserStoryDetailsPage';
+import TicketDetailsPage from './pages/TicketDetailsPage';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import AppWrapper from './components/AppWrapper';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <AppWrapper>
+        <Routes>
+          <Route path="/" element={<Login />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/companies" element={<CompanyPage />} />
+          <Route path="/Codigos" element={<GitHubLinksPage />} />
+          <Route path="/projects/:id" element={<ProjectDetailsPage />} />
+          <Route path="/user-stories/:id" element={<UserStoryDetailsPage />} />
+          <Route path="/tickets/:id" element={<TicketDetailsPage />} />
+        </Routes>
+        <ToastContainer />
+      </AppWrapper>
+    </Router>
   );
 }
 
